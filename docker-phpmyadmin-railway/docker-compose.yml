@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        environment:
+            PMA_HOST: hopper.proxy.rlwy.net
+            PMA_USER: root
+            PMA_PASSWORD: zOmVIWAvXoNAPvTKmaZHCHHcmnpZHKjV
+            PMA_PORT: 28539
+        ports:
+            - "8085:80"

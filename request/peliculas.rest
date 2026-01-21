@@ -1,0 +1,59 @@
+### Recuperar una película por ID
+GET http://localhost:3000/api/peliculas/1
+
+###
+
+### Recuperar todas las películas
+GET http://localhost:3000/api/peliculas
+
+###
+
+### Crear una nueva película
+POST http://localhost:3000/api/peliculas
+Content-Type: application/json
+
+{
+    "titulo": "Star Wars: Una Nueva Esperanza",
+    "duracion": 121,
+    "fecha_estreno": "1977-05-25",
+    "recaudacion": 775000000,
+    "saga_id": 1
+}
+
+###
+
+### Borrado de una película que no existe (404)
+DELETE http://localhost:3000/api/peliculas/99
+
+###
+
+### Borrado de una película que existe (204)
+DELETE http://localhost:3000/api/peliculas/1
+
+###
+
+### Actualización de una película existente
+PUT http://localhost:3000/api/peliculas/2
+Content-Type: application/json
+
+{
+    "titulo": "Star Wars: El Imperio Contraataca",
+    "duracion": 124,
+    "fecha_estreno": "1980-05-21",
+    "recaudacion": 538000000,
+    "saga_id": 1
+}
+
+###
+
+### Actualización de una película inexistente (BAD REQUEST)
+PUT http://localhost:3000/api/peliculas/99
+Content-Type: application/json
+
+{
+    "titulo": "Película Inexistente",
+    "duracion": 100,
+    "fecha_estreno": "2000-01-01",
+    "recaudacion": 0,
+    "saga_id": 1
+}

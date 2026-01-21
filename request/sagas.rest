@@ -1,0 +1,56 @@
+### Recuperar una saga por ID
+GET http://localhost:3000/api/sagas/1
+
+###
+
+### Recuperar todas las sagas
+GET http://localhost:3000/api/sagas
+
+###
+
+### Crear una nueva saga
+POST http://localhost:3000/api/sagas
+Content-Type: application/json
+
+{
+    "nombre": "Star Wars",
+    "descripcion": "Saga épica de ciencia ficción",
+    "fecha_inicio": "1977-05-25",
+    "activa": 1
+}
+
+###
+
+### Borrado de una saga que no existe (404)
+DELETE http://localhost:3000/api/sagas/99
+
+###
+
+### Borrado de una saga que existe (204)
+DELETE http://localhost:3000/api/sagas/1
+
+###
+
+### Actualización de una saga existente
+PUT http://localhost:3000/api/sagas/2
+Content-Type: application/json
+
+{
+    "nombre": "Star Wars - Edición Especial",
+    "descripcion": "Saga épica de ciencia ficción con remasterización",
+    "fecha_inicio": "1977-05-25",
+    "activa": 1
+}
+
+###
+
+### Actualización de una saga inexistente (BAD REQUEST)
+PUT http://localhost:3000/api/sagas/99
+Content-Type: application/json
+
+{
+    "nombre": "Saga Inexistente",
+    "descripcion": "Prueba de error",
+    "fecha_inicio": "2000-01-01",
+    "activa": 0
+}
